@@ -1,0 +1,14 @@
+.game_item {
+  &>div {
+    box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.1);
+    transition: .3s;
+    &:hover {
+      box-shadow: 2px 4px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+  }
+  &_img {
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+}

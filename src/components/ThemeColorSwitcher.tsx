@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 
 const ThemeColorSwitcher = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const toggleThemeColor = () => {
     setDarkMode(!darkMode);
