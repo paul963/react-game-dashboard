@@ -1,4 +1,3 @@
-import React from "react";
 import { IconType } from "react-icons/lib";
 import {
   FaWindows,
@@ -34,7 +33,17 @@ const PlatformIconList = ({ platforms }: Props) => {
     <div className="d-flex column-gap-2 opacity-75 flex-wrap">
       {platforms.map((platform) => (
         // {iconMap[platform.slug]}
-        <span>{platform.name}</span>
+        <div key={platform.id}>
+          {platform.slug == 'pc' && <FaWindows size={20} />}
+          {platform.slug == 'playstation' && <FaPlaystation size={20} />}
+          {platform.slug == 'xbox' && <FaXbox size={20} />}
+          {platform.slug == 'nintendi' && <SiNintendo size={20} />}
+          {platform.slug == 'mac' && <FaApple size={20} />}
+          {platform.slug == 'linux' && <FaLinux size={20} />}
+          {platform.slug == 'android' && <FaAndroid size={20} />}
+          {platform.slug == 'ios' && <MdPhoneIphone size={20} />}
+          {platform.slug == 'web' && <BsGlobe size={20} />}
+        </div>
       ))}
     </div>
   );

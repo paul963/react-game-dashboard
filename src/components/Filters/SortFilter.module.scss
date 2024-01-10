@@ -1,0 +1,29 @@
+.dropdown {
+  &_toggle {
+    transition: 0.3s;
+    &:hover {
+      color: #dee2e6;
+      background: #33393f !important;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  &_list {
+    height: 0;
+    transition: 0.3s;
+    overflow-y: auto;
+    &.open {
+      height: 35vh;
+    }
+    &_item {
+      transition: height 0.3s;
+      &:hover {
+        cursor: pointer;
+        color: #dee2e6;
+        background: #1a1d20 !important;
+      }
+    }
+  }
+}

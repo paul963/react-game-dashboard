@@ -1,0 +1,46 @@
+.genre {
+  &:hover {
+    cursor: pointer;
+  }
+  &_item {
+    transform: scale(0.9);
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1);
+    }
+  }
+}
+
+.dropdown {
+  &_toggle {
+    transition: 0.3s;
+    &:hover {
+      color: #dee2e6;
+      background: #33393f !important;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  &_list {
+    height: 0;
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 1;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    &.open {
+      height: 50vh;
+    }
+    &_item {
+      transition: height 0.3s;
+      &:hover {
+        cursor: pointer;
+        color: #dee2e6;
+        background: #1a1d20 !important;
+      }
+    }
+  }
+}

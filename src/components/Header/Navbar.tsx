@@ -1,13 +1,31 @@
-import reactLogo from '../../assets/react.svg'
-import ThemeColorSwitcher from '../ThemeColorSwitcher'
+import { useMediaQuery } from "react-responsive";
+import reactLogo from "../../assets/react.svg";
+import SearchFilter from "../Filters/SearchFilter";
+import ThemeColorSwitcher from "../ThemeColorSwitcher";
 
-const Navbar = () => {  
-  return (
-    <div className='my-3 d-flex align-items-center justify-content-between'>
-      <img src={reactLogo} className='p-1 rounded-1 shadow' />
-      <ThemeColorSwitcher />
-    </div>
-  )
+interface Props {
+  onSearch: (searchText: string) => void;
 }
 
-export default Navbar
+const Navbar = ({ onSearch }: Props) => {
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
+  return (
+    <div className="row px-3">
+      <div className="col-md-2 col-6">
+        <img src={reactLogo} className="p-1 rounded-1 shadow" />
+      </div>
+      <div className="col-md-10 col-6 d-flex align-items-center justify-md-content-between justify-content-end gap-5">
+        {!isTabletOrMobile && <SearchFilter onSearch={onSearch} />}
+        <ThemeColorSwitcher />
+      </div>
+      {isTabletOrMobile && (
+        <div className="col-12 mt-3">
+          <SearchFilter onSearch={onSearch} />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Navbar;

@@ -9,12 +9,18 @@ interface Props {
 
 const GameItem = ({ game }: Props) => {
   return (
-    <div className={`col-md-4 col-12 p-3 ${style.game_item}`}>
+    <div className={`col-xl-4 col-md-6 col-12 p-3 ${style.game_item}`}>
       <div className="bg-dark-subtle pb-5 rounded-2 overflow-hidden">
-        <img src={game.background_image} className={style.game_item_img} />
+        <img
+          src={
+            game.background_image
+              ? game.background_image
+              : "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+          }
+          className={`w-100 ${style.game_item_img}`}
+        />
         <div className="px-3 pt-3">
-          <h4>{game.name}</h4>
-          <div className="d-flex align-items-start justify-content-between gap-3">
+          <div className="mb-3 d-flex align-items-start justify-content-between gap-3">
             <PlatformIconList
               platforms={game.parent_platforms.map(
                 (platform) => platform.platform
@@ -22,6 +28,7 @@ const GameItem = ({ game }: Props) => {
             />
             <Score score={game.metacritic} />
           </div>
+          <h4>{game.name}</h4>
         </div>
       </div>
     </div>

@@ -21,12 +21,12 @@ const ThemeColorSwitcher = () => {
       {darkMode ? (
         <>
           <MdLightMode size={"25px"} />
-          <span>Light Mode</span>
+          <span className="text-nowrap">Light Mode</span>
         </>
       ) : (
         <>
           <MdDarkMode size={"25px"} />
-          <span>Dark Mode</span>
+          <span className="text-nowrap">Dark Mode</span>
         </>
       )}
     </div>
