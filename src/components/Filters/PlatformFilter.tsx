@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { IoChevronDown } from "react-icons/io5";
-import { Platform } from "../../hooks/useGames";
-import usePlatforms from "../../hooks/usePlatforms";
+import usePlatforms, { Platform } from "../../hooks/usePlatforms";
 import style from "./PlatformFilter.module.scss";
 
 interface Props {
@@ -34,7 +33,7 @@ const PlatformList = ({ onSelectPlatform, selectedPlatform }: Props) => {
         } ${listVisibility ? style.open : ""}`}
         onClick={() => toggleList()}
       >
-        {data.map((platform) => (
+        {data?.results.map((platform) => (
           <div
             key={platform.id}
             className={`px-3 py-2 bg-body-secondary ${style.dropdown_list_item}`}

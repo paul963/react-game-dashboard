@@ -1,13 +1,12 @@
-import { useState } from "react";
-import { useMediaQuery } from "react-responsive";
-import Navbar from "./components/Header/Navbar";
-import GamesContainer from "./components/Games/GamesContainer";
-import PlatformList from "./components/Filters/PlatformFilter";
-import GenreList from "./components/Filters/GenreFilter";
-import SortFilter from "./components/Filters/SortFilter";
-import { Genre } from "./hooks/useGenres";
-import { Platform } from "./hooks/useGames";
-import HeroTitle from "./components/Games/HeroTitle";
+import React, { useState } from 'react'
+import { useMediaQuery } from 'react-responsive';
+import GenreList from '../components/Filters/GenreFilter';
+import PlatformList from '../components/Filters/PlatformFilter';
+import SortFilter from '../components/Filters/SortFilter';
+import GamesContainer from '../components/Games/GamesContainer';
+import HeroTitle from '../components/Games/HeroTitle';
+import { Platform } from "../hooks/usePlatforms";
+import { Genre } from '../hooks/useGenres';
 
 export interface GameQuery {
   genre: Genre | null;
@@ -16,33 +15,24 @@ export interface GameQuery {
   searchText: string;
 }
 
-function App() {
+const HomePage = () => {
   const [gameQeury, setGameQuery] = useState<GameQuery>({} as GameQuery);
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
-
+  
   return (
     <div className="container">
       <div className="row">
-        <div className="col-12 mt-3 mb-md-5 mb-4">
-          <Navbar
-            onSearch={(searchText) =>
-              setGameQuery({ ...gameQeury, searchText })
-            }
-          />
-        </div>
-      </div>
-      <div className="row">
         {!isTabletOrMobile && (
-          <div className="sidebar col-md-2 col-12">
+          <div className="sidebar col-md-2 col-12 p-0">
             <GenreList
               selectedGenre={gameQeury.genre}
               onSelectGenre={(genre) => setGameQuery({ ...gameQeury, genre })}
             />
           </div>
         )}
-        <div className="main col-md-10 col-12">
+        <div className="main col-md-10 col-12 p-0">
           <HeroTitle gameQuery={gameQeury} />
-          <div className="px-3 d-flex gap-3 flex-md-row flex-column">
+          <div className="px-3 pb-3 d-flex gap-3 flex-md-row flex-column">
             {isTabletOrMobile && (
               <GenreList
                 selectedGenre={gameQeury.genre}
@@ -66,7 +56,7 @@ function App() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default HomePage

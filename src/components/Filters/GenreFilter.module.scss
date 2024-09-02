@@ -6,7 +6,12 @@
     transform: scale(0.9);
     transition: 0.3s;
     &:hover {
-      transform: scale(1);
+      html[data-bs-theme="dark"] & {
+        background: #33393f;
+      }
+      html[data-bs-theme="light"] & {
+        background: #ced4da;
+      }
     }
   }
 }

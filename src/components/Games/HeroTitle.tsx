@@ -1,4 +1,4 @@
-import { GameQuery } from "../../App";
+import { GameQuery } from "../../pages/Layout";
 
 interface Props {
   gameQuery: GameQuery;

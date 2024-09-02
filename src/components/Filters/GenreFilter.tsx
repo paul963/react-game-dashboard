@@ -30,7 +30,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
               <div className="spinner-grow text-secondary" role="status"></div>
             )}
 
-            {data.map((genre) => (
+            {data?.results.map((genre) => (
               <li
                 key={genre.id}
                 onClick={() => onSelectGenre(genre)}
@@ -76,7 +76,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
                 ></div>
               )}
 
-              {data.map((genre) => (
+              {data?.results.map((genre) => (
                 <li
                   key={genre.id}
                   onClick={() => onSelectGenre(genre)}

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 
 const ThemeColorSwitcher = () => {
@@ -17,7 +16,7 @@ const ThemeColorSwitcher = () => {
   }, [darkMode]);
 
   return (
-    <div className="d-flex align-items-center gap-1" onClick={toggleThemeColor}>
+    <div className="d-flex align-items-center gap-1" role="button" onClick={toggleThemeColor}>
       {darkMode ? (
         <>
           <MdLightMode size={"25px"} />
