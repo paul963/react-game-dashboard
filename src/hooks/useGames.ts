@@ -1,19 +1,9 @@
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import { GameQuery } from "../pages/Layout";
 import APIClient, { FetchResponse } from "../services/api-client";
-import { Platform } from "./usePlatforms";
+import { Game } from "../entities/Game";
 
 const apiClient = new APIClient<Game>("/games");
-
-export interface Game {
-  id: number;
-  name: string;
-  slug: string;
-  description_raw: string;
-  background_image: string;
-  parent_platforms: { platform: Platform }[];
-  metacritic: number;
-}
 
 const useGames = (gameQuery: GameQuery) =>
   useQuery<FetchResponse<Game>, Error>({
@@ -30,6 +20,7 @@ const useGames = (gameQuery: GameQuery) =>
     staleTime: 24 * 60 * 60 * 1000 // 24h
   });
 
+// Add pagnation
 // const useGames = (gameQuery: GameQuery) =>
 //   useInfiniteQuery<FetchResponse<Game>, Error>({
 //     queryKey: ["games", gameQuery],

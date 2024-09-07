@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Header/Navbar";
-import { Platform } from "../hooks/usePlatforms";
-import { Genre } from "../hooks/useGenres";
+import { Platform } from "../entities/Platform";
+import { Genre } from "../entities/Genre";
 
 export interface GameQuery {
   genre: Genre | null;

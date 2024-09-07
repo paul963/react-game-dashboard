@@ -27,7 +27,8 @@ const GamesContainer = ({ gameQuery }: Props) => {
         {isLoading
           ? skeletons.map((skeleton) => <GameItemLoading key={skeleton} />)
           : data?.results.map((game) => <GameItem key={game.id} game={game} />)}
-        {/* : data?.pages.map((page, index) => (
+        {/* Add pagnation
+          : data?.pages.map((page, index) => (
             <React.Fragment key={index}>
               {page.results.map((game) => (
                 <GameItem key={game.id} game={game} />
@@ -35,7 +36,8 @@ const GamesContainer = ({ gameQuery }: Props) => {
             </React.Fragment>
           ))} */}
       </div>
-      {/* <div className="row">
+      {/* Add pagnation
+      <div className="row">
         <div className="col-12">
           {hasNextPage && (
             <button

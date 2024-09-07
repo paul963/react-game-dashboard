@@ -5,8 +5,8 @@ import PlatformList from '../components/Filters/PlatformFilter';
 import SortFilter from '../components/Filters/SortFilter';
 import GamesContainer from '../components/Games/GamesContainer';
 import HeroTitle from '../components/Games/HeroTitle';
-import { Platform } from "../hooks/usePlatforms";
-import { Genre } from '../hooks/useGenres';
+import { Platform } from "../entities/Platform";
+import { Genre } from "../entities/Genre";
 
 export interface GameQuery {
   genre: Genre | null;
