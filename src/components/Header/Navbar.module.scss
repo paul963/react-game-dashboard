@@ -1,0 +1,7 @@
+.navbar {
+  @media(max-width: 768px) {
+    & .search_container {
+      order: 3;
+    }
+  }
+}

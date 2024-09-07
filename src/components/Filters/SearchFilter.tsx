@@ -10,7 +10,6 @@ const SearchFilter = ({ onSearch }: Props) => {
 
   return (
     <form
-      className="w-100"
       onSubmit={(e) => {
         e.preventDefault();
         if (ref.current) {
