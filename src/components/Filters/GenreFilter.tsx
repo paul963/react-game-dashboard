@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoChevronDown } from "react-icons/io5";
 import { useMediaQuery } from "react-responsive";
 import useGenres from "../../hooks/useGenres";
-import { Genre } from "../../entities/Genre";
+import Genre from "../../entities/Genre";
 import style from "./GenreFilter.module.scss";
 
 interface Props {

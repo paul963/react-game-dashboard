@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { IoSearch } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   onSearch: (searchText: string) => void;
@@ -7,6 +8,7 @@ interface Props {
 
 const SearchFilter = ({ onSearch }: Props) => {
   const ref = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
 
   return (
     <form
@@ -14,6 +16,7 @@ const SearchFilter = ({ onSearch }: Props) => {
         e.preventDefault();
         if (ref.current) {
           onSearch(ref.current.value);
+          navigate('/');
         }
       }}
     >

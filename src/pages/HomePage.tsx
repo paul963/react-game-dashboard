@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive';
 import GenreList from '../components/Filters/GenreFilter';
 import PlatformList from '../components/Filters/PlatformFilter';
 import SortFilter from '../components/Filters/SortFilter';
 import GamesContainer from '../components/Games/GamesContainer';
 import HeroTitle from '../components/Games/HeroTitle';
-import { Platform } from "../entities/Platform";
-import { Genre } from "../entities/Genre";
+import Platform from "../entities/Platform";
+import Genre from "../entities/Genre";
 
 export interface GameQuery {
   genre: Genre | null;

@@ -1,4 +1,3 @@
-import { useMediaQuery } from "react-responsive";
 import reactLogo from "../../assets/react.svg";
 import SearchFilter from "../Filters/SearchFilter";
 import ThemeColorSwitcher from "../ThemeColorSwitcher";
@@ -9,8 +8,6 @@ interface Props {
 }
 
 const Navbar = ({ onSearch }: Props) => {
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
-
   return (
     <div className="container py-md-3 pt-2 pb-4">
       <div className="row">

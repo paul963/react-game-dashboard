@@ -1,4 +1,4 @@
-import { Game } from "../../entities/Game";
+import Game from "../../entities/Game";
 import PlatformIconList from "./PlatformIconList";
 import Score from "./Score";
 import style from "./GameItem.module.scss";

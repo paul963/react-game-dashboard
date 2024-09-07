@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IoChevronDown } from "react-icons/io5";
 import usePlatforms from "../../hooks/usePlatforms";
-import { Platform } from "../../entities/Platform";
+import Platform from "../../entities/Platform";
 import style from "./PlatformFilter.module.scss";
 
 interface Props {

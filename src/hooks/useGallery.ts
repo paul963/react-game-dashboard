@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Gallery } from "../entities/Gallery";
+import Gallery from "../entities/Gallery";
 import APIClient from "../services/api-client";
 
 const useGallery = (gameId: number) => {
