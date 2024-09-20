@@ -7,6 +7,7 @@ import GamesContainer from '../components/Games/GamesContainer';
 import HeroTitle from '../components/Games/HeroTitle';
 import Platform from "../entities/Platform";
 import Genre from "../entities/Genre";
+import Navbar from '../components/Header/Navbar';
 
 export interface GameQuery {
   genre: Genre | null;
@@ -21,6 +22,7 @@ const HomePage = () => {
   
   return (
     <div className="container">
+      <Navbar onSearch={(searchText) => setGameQuery({ ...gameQeury, searchText })} />
       <div className="row">
         {!isTabletOrMobile && (
           <div className="sidebar col-md-2 col-12 p-0">

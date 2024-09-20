@@ -24,5 +24,5 @@ The games are taken from an API (RAWG API).
 1. Clone repository
 2. Run `npm i` to install the required dependencies
 3. Run `npm start` to start the web server
-4. Create an account dand get a RAWG API key at https://rawg.io/apidocs (optional)
+4. Create an account and get a RAWG API key at https://rawg.io/apidocs (optional)
 5. Add the API key to src/services/api-client.ts (optional)
