@@ -12,12 +12,12 @@ export interface GameQuery {
 }
 
 const Layout = () => {
-  const [gameQeury, setGameQuery] = useState<GameQuery>({} as GameQuery);
+  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   return (
     <>
-      <Navbar onSearch={(searchText) => setGameQuery({ ...gameQeury, searchText })} />
-      <Outlet />
+      <Navbar onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })} />
+      <Outlet context={{ gameQuery, setGameQuery }} />
     </>
   );
 };

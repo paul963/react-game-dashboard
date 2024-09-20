@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive';
 import GenreList from '../components/Filters/GenreFilter';
 import PlatformList from '../components/Filters/PlatformFilter';
@@ -8,6 +7,7 @@ import HeroTitle from '../components/Games/HeroTitle';
 import Platform from "../entities/Platform";
 import Genre from "../entities/Genre";
 import Navbar from '../components/Header/Navbar';
+import { useOutletContext } from 'react-router-dom';
 
 export interface GameQuery {
   genre: Genre | null;
@@ -17,44 +17,44 @@ export interface GameQuery {
 }
 
 const HomePage = () => {
-  const [gameQeury, setGameQuery] = useState<GameQuery>({} as GameQuery);
+  const { gameQuery, setGameQuery } = useOutletContext<{ gameQuery: GameQuery; setGameQuery: React.Dispatch<React.SetStateAction<GameQuery>> }>();
+
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
   
   return (
     <div className="container">
-      <Navbar onSearch={(searchText) => setGameQuery({ ...gameQeury, searchText })} />
       <div className="row">
         {!isTabletOrMobile && (
           <div className="sidebar col-md-2 col-12 p-0">
             <GenreList
-              selectedGenre={gameQeury.genre}
-              onSelectGenre={(genre) => setGameQuery({ ...gameQeury, genre })}
+              selectedGenre={gameQuery.genre}
+              onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
             />
           </div>
         )}
         <div className="main col-md-10 col-12 p-0">
-          <HeroTitle gameQuery={gameQeury} />
+          <HeroTitle gameQuery={gameQuery} />
           <div className="px-3 pb-3 d-flex gap-3 flex-md-row flex-column">
             {isTabletOrMobile && (
               <GenreList
-                selectedGenre={gameQeury.genre}
-                onSelectGenre={(genre) => setGameQuery({ ...gameQeury, genre })}
+                selectedGenre={gameQuery.genre}
+                onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
               />
             )}
             <PlatformList
-              selectedPlatform={gameQeury.platform}
+              selectedPlatform={gameQuery.platform}
               onSelectPlatform={(platform) =>
-                setGameQuery({ ...gameQeury, platform })
+                setGameQuery({ ...gameQuery, platform })
               }
             />
             <SortFilter
-              sortOrder={gameQeury.sortOrder}
+              sortOrder={gameQuery.sortOrder}
               onSelectSortOrder={(sortOrder) =>
-                setGameQuery({ ...gameQeury, sortOrder })
+                setGameQuery({ ...gameQuery, sortOrder })
               }
             />
           </div>
-          <GamesContainer gameQuery={gameQeury} />
+          <GamesContainer gameQuery={gameQuery} />
         </div>
       </div>
     </div>
