@@ -6,7 +6,6 @@ import GamesContainer from '../components/Games/GamesContainer';
 import HeroTitle from '../components/Games/HeroTitle';
 import Platform from "../entities/Platform";
 import Genre from "../entities/Genre";
-import Navbar from '../components/Header/Navbar';
 import { useOutletContext } from 'react-router-dom';
 
 export interface GameQuery {
